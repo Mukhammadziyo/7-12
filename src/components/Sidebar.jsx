@@ -21,53 +21,54 @@ function Sidebar() {
   }, []);
 
   return (
-    <div className="col-start-1 col-end-3 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 min-h-screen px-4 pt-10 pb-6 rounded-r-2xl shadow-2xl">
-    <div className="flex flex-col items-center mb-10">
-      <figure className="flex flex-col items-center gap-2">
-        <Avatar user={user} />
-        <h3 className="text-xl font-semibold text-white text-center">Hello, {user.displayName}</h3>
-      </figure>
+    <div className="col-start-1 col-end-3 bg-gradient-to-b from-indigo-900 via-indigo-800 to-indigo-900 min-h-screen px-4 pt-10 pb-6 rounded-r-2xl shadow-2xl">
+      <div className="flex flex-col items-center mb-10">
+        <figure className="flex flex-col items-center gap-2">
+          <Avatar user={user} />
+          <h3 className="text-xl font-semibold text-slate-100 text-center">
+            Hello, {user.displayName}
+          </h3>
+        </figure>
+      </div>
+
+      <div className="flex flex-col items-end gap-4">
+        <Link
+          to="/"
+          className={`flex items-center gap-3 py-2 px-4 w-40 rounded-l-2xl font-medium transition duration-300 ${
+            location.pathname === "/"
+              ? "bg-lime-700 text-white shadow-lg"
+              : "bg-indigo-800 text-slate-300 hover:bg-indigo-700 hover:text-white hover:shadow"
+          }`}
+        >
+          <RxDashboard size={20} />
+          <span className="whitespace-nowrap">Dashboard</span>
+        </Link>
+
+        <Link
+          to="/create"
+          className={`flex items-center gap-3 py-2 px-4 w-40 rounded-l-2xl font-medium transition duration-300 ${
+            location.pathname === "/create"
+              ? "bg-lime-700 text-white shadow-lg"
+              : "bg-indigo-800 text-slate-300 hover:bg-indigo-700 hover:text-white hover:shadow"
+          }`}
+        >
+          <MdCreateNewFolder size={20} />
+          <span className="whitespace-nowrap">Create</span>
+        </Link>
+
+        <Link
+          to="/settings"
+          className={`flex items-center gap-3 py-2 px-4 w-40 rounded-l-2xl font-medium transition duration-300 ${
+            location.pathname === "/settings"
+              ? "bg-lime-700 text-white shadow-lg"
+              : "bg-indigo-800 text-slate-300 hover:bg-indigo-700 hover:text-white hover:shadow"
+          }`}
+        >
+          <IoIosSettings size={20} />
+          <span className="whitespace-nowrap">Settings</span>
+        </Link>
+      </div>
     </div>
-  
-    <div className="flex flex-col items-end gap-4">
-      <Link
-        to="/"
-        className={`flex items-center gap-3 py-2 px-4 w-40 rounded-l-2xl font-medium transition duration-300 ${
-          location.pathname === "/"
-            ? "bg-purple-700 text-white shadow-md"
-            : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white hover:shadow"
-        }`}
-      >
-        <RxDashboard size={20} />
-        <span className="whitespace-nowrap">Dashboard</span>
-      </Link>
-  
-      <Link
-        to="/create"
-        className={`flex items-center gap-3 py-2 px-4 w-40 rounded-l-2xl font-medium transition duration-300 ${
-          location.pathname === "/create"
-            ? "bg-purple-700 text-white shadow-md"
-            : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white hover:shadow"
-        }`}
-      >
-        <MdCreateNewFolder size={20} />
-        <span className="whitespace-nowrap">Create</span>
-      </Link>
-  
-      <Link
-        to="/settings"
-        className={`flex items-center gap-3 py-2 px-4 w-40 rounded-l-2xl font-medium transition duration-300 ${
-          location.pathname === "/settings"
-            ? "bg-purple-700 text-white shadow-md"
-            : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white hover:shadow"
-        }`}
-      >
-        <IoIosSettings size={20} />
-        <span className="whitespace-nowrap">Settings</span>
-      </Link>
-    </div>
-  </div>
-  
   );
 }
 
